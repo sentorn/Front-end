@@ -1,0 +1,59 @@
+.for-table {
+    width: 400px;
+    margin: 0 auto;
+    background: #5f9ea0;
+}
+
+h1 {
+    text-align: center;
+    background: #870000;
+    color: #ffffff;
+    padding: 5px;
+}
+
+table {
+    margin: 20px auto;
+}
+
+thead {
+    text-align: center;
+}
+
+td {
+   /* border: 1px solid black;*/
+    padding: 10px;
+
+}
+
+textarea {
+    height: 50px;
+    resize: none;
+}
+
+.button {
+    width: 100px;
+}
+
+.res {
+    text-align: center;
+}
+
+.button:hover {
+    border-color: #870000;
+    color: #870000;
+    cursor: pointer;
+}
+
+.label:hover {
+    color: #870000;
+    cursor: default;
+}
+
+.p {
+    border-color: #870000;
+    cursor: pointer;
+}
+
+.field:hover {
+    border-color: coral;
+}

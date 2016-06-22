@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: lightgrey;
+}
+
+.main {
+    text-align: center;
+    width: 600px;
+    background-color: lightgrey;
+    margin: 10px auto;
+}
+
+.header {
+    height: 40px;
+    margin: 5px auto;
+
+}
+
+.logo {
+    float: left;
+    margin: 5px;
+}
+
+.menu {
+    width: 470px;
+    height: 50px;
+    float: right;
+    margin: 5px;
+    border-radius: 5px;
+
+}
+
+.banner {
+    margin: 5px auto;
+    clear: both;
+}
+
+.news {
+    width: 100px;
+    height: 300px;
+    float: left;
+    margin: 0 5px;
+    border-radius: 5px;
+}
+
+.stock {
+    float: right;
+}
+
+.content {
+    width: 350px;
+    height: 300px;
+    margin: 5px auto;
+    border-radius: 5px;
+    text-align: left;
+    text-indent: 15px;
+    padding: 5px;
+}
+
+/*.content p {
+    padding-left: 10px;
+
+}*/
+
+.footer {
+    width: 590px;
+    height: 100px;
+    margin: 15px 5px;
+    border-radius: 5px;
+    text-align: left;
+    text-indent: 15px;
+    clear: both;
+}
+
+.shadow {
+    box-shadow: 5px 5px 10px;
+    background-color: #ceffaa;
+    border: 3px double black;
+}
+
+.animation-img-banner {
+    width: 400px;
+}
+
+.img-banner {
+    width: 600px;
+}
+
+.main-logo {
+    width: 100px;
+}
+
+.ond-logo {
+    width: 70px;
+    padding: 10px;
+    float: left;
+}
+
+.menu-element {
+    float: left;
+    margin: 15px 25px;
+    font-weight: bold;
+}
+
+.news a {
+    text-decoration: none;
+}
+
+.link {
+    margin-top: 20px;
+}
+
+.li-text {
+    margin-left: 30px;
+}

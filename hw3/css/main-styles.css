@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica, sans-serif;
+}
+
+.clear {
+    clear: both;
+}
+
+
+.container {
+    width: 760px;
+    background: #fafafa;
+    margin: 0 auto;
+}
+
+/* header */
+
+.header {
+    position: relative;
+    padding: 20px 10px;
+    background: #870000;
+}
+
+.logo {
+    float: left;
+    width: 80px;
+    height: 80px;
+    background: url('../img/logo.png') 0 0 no-repeat;
+    background-size: 80px 80px;
+}
+
+/* Переделать на Float */
+.promo {
+   /* position: absolute;
+    top: 30px;
+    right: 20px;*/
+    padding-top: 10px;
+    float: right;
+    color: #ffffff;
+}
+
+
+/* Menu */
+/* Переверстать через списки */
+
+.menu {
+    margin: 10px 0;
+}
+
+.menu-elem {
+    display: inline-block;
+    margin-right: 10px;
+    cursor: pointer;
+    font-weight: 700; /* bold = 700 */
+    font-size: 18px;
+    line-height: 20px;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+.menu-elem:hover {
+    background: #870000;
+    color: #ffffff;
+}
+
+.page-heading {
+    color: #870000;
+    margin-bottom: 10px;
+    padding-left: 10px;
+}
+
+.main-content {
+    float: left;
+    width: 520px;
+    margin-right: 5px;
+    padding: 10px;
+}
+
+.sidebar {
+    float: left;
+    width: 200px;
+    background: #ededed;
+    height: 300px;
+    padding: 5px;
+    margin-top: 10px;
+    border-radius: 2px;
+    border: 1px solid #c7c7c7;
+    box-shadow: 0 0 3px 1px #000000;
+    text-align: center;
+
+}
+
+/* Новость */
+
+.news-block {
+    background: #ededed;
+    border: 1px solid #c7c7c7;
+    box-shadow: 0 0 3px 1px #000000;
+    padding: 5px;
+}
+
+.news-image {
+    max-width: 350px;
+    float: left;
+    margin-right: 10px;
+}
+
+.news-text {
+    font-size: 12px;
+    line-height: 16px;
+    color: #000000;
+}
+
+.news-text ul {
+    list-style: none;
+}
+
+.date {
+    font-size: 10px;
+    color: #870000;
+    margin-top: 10px;
+}
+
+.read-more {
+    float: right;
+    background: #870000;
+    border: 1px solid #870000;
+    border-radius: 5px;
+    color: #ffffff;
+    font-weight: 700;
+    padding: 5px 10px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.read-more:hover {
+    text-decoration: none;
+}
