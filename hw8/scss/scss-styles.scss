@@ -1,0 +1,1080 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto Slab";
+}
+
+$color-white: #ffffff;
+$color-yellow: #ffd670;
+$color-lite-gray: #f3f3f3;
+$color-dark-gray: #5c5766;
+$color-about-block: #524664;
+$color-blog-text: #898d9d;
+$color-contacts: #a5aabe;
+$color-placeholder: #cacaca;
+
+@mixin main-blocks($padding) {
+  padding: $padding;
+}
+
+.link {
+  color: $color-white;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+@mixin block-size($height, $width) {
+  height: $height;
+  width: $width;
+}
+
+@mixin color-blocks($bg-color, $font-color, $align: center) {
+  background-color: $bg-color;
+  color: $font-color;
+  text-align: $align;
+}
+
+@mixin text-config($size, $weight) {
+  font-size: $size;
+  font-weight: $weight;
+}
+
+@mixin lists($margin, $display) {
+  margin: $margin;
+  display: $display;
+}
+
+@mixin rotate($deg) {
+  transform: rotate($deg);
+  -o-transform: rotate($deg);
+  -moz-transform: rotate($deg);
+  -ms-transform: rotate($deg);
+  -webkit-transform: rotate($deg);
+}
+
+@mixin chevrons($rotate, $left, $top) {
+  @include block-size(2px, 20px);
+  @include rotate($rotate);
+  background-color: $color-white;
+  position: relative;
+  left: $left;
+  top: $top;
+}
+
+.outer-circle {
+  @include block-size(100px, 100px);
+  border-radius: 50px;
+  border: 2px solid $color-white;
+  box-sizing: border-box;
+  margin: 140px auto 50px;
+  padding-top: 13px;
+  .inner-circle {
+    @include block-size(70px, 70px);
+    border-radius: 35px;
+    border: none;
+    margin: auto;
+  }
+}
+
+%social-circle {
+  @include block-size(48px, 48px);
+  display: inline-block;
+  border-radius: 24px;
+  border: 3px solid $color-white;
+  box-sizing: border-box;
+  margin: 0 13px;
+}
+
+.clear {
+  clear: both;
+}
+
+.header {
+  @include main-blocks(5% 5%);
+  @include color-blocks($color-dark-gray, $color-white);
+  background-image: url("../img/pic-block-header.jpg");
+  background-position: center;
+  background-size: cover;
+  li {
+    @include lists(0 80px, inline-block);
+    @include text-config(15px, bold);
+  }
+  .inner-circle {
+    @include color-blocks($color-white, $color-about-block);
+    @include text-config(50px, bold);
+    font-family: Pacifico;
+    position: relative;
+    line-height: 50px;
+  }
+  .first-line {
+    @include text-config(35px, regular);
+    margin-bottom: 35px;
+  }
+  .second-line {
+    @include text-config(66px, 300);
+    span {
+      font-weight: bold;
+    }
+    margin-bottom: 45px;
+  }
+  .third-line {
+    @include text-config(22px, 300);
+    margin-bottom: 50px;
+  }
+  .social-circle {
+    @extend %social-circle;
+    opacity: 0.5;
+  }
+  .fa {
+    line-height: 43px;
+    vertical-align: bottom;
+  }
+  .fa-twitter {
+    font-size: 25px;
+  }
+  .fa-dribbble {
+    font-size: 30px;
+  }
+  .fa-behance {
+    font-size: 20px;
+  }
+  .line {
+    @include block-size(3px, 90px);
+    opacity: 0.5;
+    display: inline-block;
+    background-color: $color-white;
+    margin-bottom: 16px;
+    position: relative;
+  }
+  .left-line {
+    left: 17px;
+  }
+  .right-line {
+    right: 17px;
+  }
+  .second-list {
+    margin-top: 160px;
+    li {
+      @include lists(0 41px, inline-block);
+      @include text-config(18px, bold);
+      letter-spacing: 3px;
+    }
+    span {
+      color: #ffd670;
+    }
+    margin-bottom: 65px;
+  }
+}
+
+h2 {
+  @include text-config(35px, bold);
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+h3 {
+  @include text-config(18px, bold);
+  letter-spacing: 1px;
+  margin-bottom: 40px;
+}
+
+%question {
+  @include text-config(16px, 300);
+  letter-spacing: 1px;
+}
+
+%line {
+  @include block-size(4px, 90px);
+}
+
+%forms {
+  background-color: $color-lite-gray;
+  border: none;
+  border-radius: 3px;
+}
+
+#about {
+  @include main-blocks(7% 5%);
+  @include color-blocks($color-about-block, $color-white);
+  .outer-circle {
+    border-color: $color-yellow;
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+  .inner-circle {
+    @include color-blocks($color-yellow, $color-white);
+  }
+  .fa-user {
+    font-size: 60px;
+    margin-top: 15px;
+  }
+  .line {
+    @extend %line;
+    background-color: $color-white;
+    opacity: 0.3;
+    margin: 0 auto 20px;
+  }
+  .question {
+    @extend %question;
+    opacity: 0.6;
+    margin-bottom: 100px;
+  }
+  .text-about {
+    @include block-size(auto, 35%);
+    text-align: left;
+    float: left;
+    p {
+      @include text-config(15px, 300);
+      opacity: 0.6;
+    }
+    .new-p {
+      margin: 40px 0 20px;
+    }
+  }
+  .skills {
+    @include block-size(auto, 35%);
+    float: right;
+    text-align: left;
+  }
+  .big-outer-circle {
+    @include block-size(300px, 300px);
+    border: 6px solid $color-yellow;
+    box-sizing: border-box;
+    border-radius: 50%;
+    margin: 0 auto;
+  }
+  .big-inner-circle {
+    @include block-size(220px, 220px);
+    border-radius: 50%;
+    background-color: $color-yellow;
+    margin: 11% auto;
+    overflow: hidden;
+  }
+  img {
+    width: 160%;
+    position: relative;
+    top: -15px;
+    left: -90px;
+  }
+  .social-circle {
+    @extend %social-circle;
+    opacity: 0.5;
+    text-align: center;
+    margin: 0 26px 0 0;
+  }
+  .fa {
+    line-height: 43px;
+    vertical-align: bottom;
+  }
+  .fa:first-child {
+    margin-left: 0;
+  }
+  .fa-twitter {
+    font-size: 25px;
+  }
+  .fa-dribbble {
+    font-size: 30px;
+  }
+  .fa-behance {
+    font-size: 20px;
+  }
+  .outer-p {
+    @include text-config(15px, 300);
+    opacity: 0.6;
+    margin: 25px 0;
+  }
+  .outer-div {
+    @include block-size(40px, 100%);
+    background-color: #615474;
+    margin: 15px 0;
+    overflow: hidden;
+    border-radius: 3px;
+  }
+  .yellow {
+    background-color: $color-yellow;
+  }
+  .p-text {
+    font-family: Source Sans Pro Semibold;
+    line-height: 40px;
+    display: inline;
+  }
+  .left {
+    @include text-config(13px, $color-white);
+    text-align: left;
+    margin-left: 20px;
+
+  }
+  .right {
+    font-size: 15px;
+    color: #4a5561;
+    float: right;
+    margin-right: 20px;
+  }
+  .ps {
+    width: 70%;
+  }
+  .ai {
+    width: 90%;
+  }
+  .ain {
+    width: 60%;
+  }
+  .htm {
+    width: 100%;
+  }
+  .cs {
+    width: 90%;
+  }
+  .js {
+    width: 65%;
+  }
+}
+
+#portfolio {
+  @include main-blocks(7% 5%);
+  @include color-blocks($color-yellow, $color-white);
+  .line {
+    @extend %line;
+    background-color: $color-white;
+    margin: 0 auto 20px;
+  }
+  .question {
+    @extend %question;
+    margin-bottom: 100px;
+  }
+  .project-name {
+    @include block-size(auto, 35%);
+    float: left;
+    text-align: left;
+  }
+  .pictures {
+    @include block-size(500px, 60%);
+    background-color: $color-dark-gray;
+    position: relative;
+    float: right;
+    background-image: url("../img/Iphone7.jpg");
+    background-position: center;
+    background-size: cover;
+  }
+  .name {
+    @include text-config(16px, 300);
+    color: #fff1ce;
+    margin-bottom: 20px;
+  }
+  h3 {
+    margin-bottom: 20px;
+  }
+  .big-line {
+    @include block-size(1px, 100%);
+    background-color: $color-white;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+  ul {
+    margin-bottom: 20px;
+    list-style-image: url("../img/romb.png");
+  }
+  li {
+    @include text-config(15px, 300);
+    margin-left: 40px;
+    margin-bottom: 10px;
+  }
+  p {
+    @include text-config(15px, 300);
+  }
+  a {
+    color: $color-white;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  .chevron {
+    @include block-size(60px, 50px);
+    @include color-blocks(rgba(255, 214, 112, 0.65), $color-white);
+    position: absolute;
+    border-radius: 5px;
+  }
+  .chevron:hover {
+    cursor: pointer;
+  }
+  .chevron-left {
+    left: -15px;
+    top: 40%;
+
+  }
+  .chevron-right {
+    right: -15px;
+    top: 40%;
+  }
+
+  .close {
+    @include block-size(30px, 30px);
+    position: absolute;
+    right: 0;
+    top: 0;
+    p {
+      font-size: 30px;
+      opacity: 0.8;
+    }
+    p:hover {
+      cursor: pointer;
+    }
+  }
+  .part-1 {
+    @include chevrons(-45deg, 20px, 22px);
+  }
+  .part-2 {
+    @include chevrons(45deg, 20px, 34px);
+  }
+  .part-3 {
+    @include chevrons(45deg, 10px, 22px);
+  }
+  .part-4 {
+    @include chevrons(-45deg, 10px, 34px);
+  }
+  .block {
+    margin: 70px 50px 100px 0;
+    display: inline-block;
+    @include text-config(12px, 500);
+    padding: 5px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+  }
+  .block:hover {
+    cursor: pointer;
+    border-color: $color-white;
+  }
+  .diamonds {
+    @include main-blocks(3% 0);
+  }
+  .diamond {
+    @include rotate(-45deg);
+    @include block-size(170px, 170px);
+    background-color: $color-dark-gray;
+    display: inline-block;
+    margin: 0 5%;
+    overflow: hidden;
+    border-radius: 10px;
+
+  }
+  .d {
+    @include rotate(45deg);
+    @include block-size(145%, 145%);
+    background-size: cover;
+    position: relative;
+    left: -35px;
+    top: -35px;
+    p {
+      padding-top: 100px;
+      visibility: hidden;
+    }
+    .fa-plus {
+      font-size: 25px;
+      line-height: 43px;
+    }
+  }
+  @each $pic in p1, p2, p3, p4, p5, p6, p7 {
+    .#{$pic} {
+      background-image: url("../img/#{$pic}.jpg");
+    }
+  }
+  .hidden-div {
+    @include block-size(100%, 100%);
+    background-color: rgba(92, 87, 102, 0.5);
+    visibility: hidden;
+  }
+  .red-circle {
+    @include block-size(40px, 40px);
+    display: inline-block;
+    border-radius: 20px;
+    background-color: #bc492b;
+  }
+  .d:hover {
+    cursor: pointer;
+    p {
+      visibility: visible;
+    }
+    .hidden-div {
+      visibility: visible;
+    }
+  }
+}
+
+.social-circle:hover {
+  cursor: pointer;
+}
+
+#blog {
+  @include main-blocks(70px 5%);
+  @include color-blocks($color-white, #5b6074);
+  .line {
+    @extend %line;
+    background-color: $color-contacts;
+    margin: 0 auto 20px;
+  }
+  .question {
+    @extend %question;
+    margin-bottom: 100px;
+  }
+  .all-block {
+    margin-bottom: 100px;
+  }
+  .pic-com {
+    @include color-blocks(inherit, $color-blog-text, left);
+    @include block-size(auto, 48%);
+    float: left;
+    margin-left: 12%;
+  }
+  .sidebar {
+    @include color-blocks(inherit, $color-blog-text, left);
+    @include block-size(auto, 23%);
+    float: right;
+    margin-right: 12%;
+    @include text-config(13px, regular);
+    p {
+      margin: 40px 0 30px 0;
+    }
+    p:first-child {
+      margin-top: 0;
+    }
+    .search {
+      border-radius: 5px;
+      background-color: $color-lite-gray;
+    }
+    input[type="text"] {
+      @include block-size(40px, 80%);
+      border: none;
+      background-color: $color-lite-gray;
+    }
+    .fa-search {
+      float: right;
+      font-size: 20px;
+      margin-right: 5%;
+      line-height: 40px;
+      color: $color-yellow;
+    }
+    .fa-search:hover {
+      cursor: pointer;
+    }
+    ul {
+      list-style: none;
+      margin-top: -20px;
+    }
+    li {
+      line-height: 40px;
+      border-bottom: 1px solid $color-lite-gray;
+      p {
+        font-size: 13px;
+        margin-bottom: 0;
+        margin-left: 30px;
+      }
+    }
+    li:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+    li:last-child {
+      border: none;
+    }
+  }
+  .picture-block {
+    @include block-size(300px, auto);
+    border-radius: 10px;
+    background-image: url("../img/p4.jpg");
+    background-position: center;
+    background-size: cover;
+  }
+  h3 {
+    @include text-config(24px, bold);
+    color: #373c4f;
+    margin: 20px 0;
+  }
+  span {
+    font-weight: bold;
+  }
+  .date {
+    @include text-config(11px, 300);
+    color: #c4c0cf;
+    margin-bottom: 20px;
+  }
+  p {
+    @include text-config(15px, 300);
+    margin: 20px 0;
+  }
+  .big-line {
+    @include block-size(1px, 100%);
+    background-color: $color-lite-gray;
+  }
+  .comments {
+    @include text-config(15px, bold);
+    margin: 30px 0;
+  }
+  .comment {
+    @include block-size(auto, auto);
+    @include main-blocks(30px 0);
+    p {
+      margin: 0 0 0 70px;
+      @include text-config(13px, 300);
+    }
+    border-bottom: 1px solid $color-lite-gray;
+  }
+  .user-icon {
+    @include block-size(60px, 60px);
+    @include color-blocks(#e6e6e6, $color-white);
+    border-radius: 3px;
+    float: left;
+  }
+  .fa-user {
+    font-size: 30px;
+    line-height: 60px;
+  }
+  .orange {
+    color: #ffdb83;
+  }
+  .r {
+    font-weight: 300;
+  }
+  .user-name {
+    margin-bottom: 5px !important;
+  }
+  .comment-date {
+    margin-bottom: 15px !important;
+    font-size: 11px !important;
+    color: #c4c0cf;
+  }
+  .answer {
+    padding-left: 50px;
+  }
+  .last {
+    margin-bottom: 50px;
+  }
+  .tf {
+    @include block-size(40px, 49%);
+    @extend %forms;
+    margin-bottom: 10px;
+  }
+  .tf-name {
+    margin-right: 1%;
+  }
+  .ta {
+    @include block-size(100px, 100%);
+    @extend %forms;
+    resize: none;
+  }
+  .tf::-webkit-input-placeholder {
+    padding-left: 10px;
+    color: $color-placeholder;
+  }
+  .ta::-webkit-input-placeholder {
+    padding: 10px;
+    color: $color-placeholder;
+  }
+  input[type="submit"] {
+    @include block-size(40px, 150px);
+    @include color-blocks($color-yellow, $color-white);
+    @include text-config(15px, bold);
+    margin-top: 10px;
+    border: none;
+    border-radius: 3px;
+  }
+  input[type="submit"]:hover {
+    cursor: pointer;
+    background-color: #ba9945;
+  }
+
+  .scroll-pictures {
+    @include block-size(auto, auto);
+    margin: 0 auto;
+    overflow: auto;
+    white-space: nowrap;
+  }
+  .p-block {
+    @include block-size(auto, 280px);
+    @include color-blocks($color-lite-gray, $color-blog-text, left);
+    display: inline-block;
+    margin-right: 20px;
+    border-radius: 10px;
+    text-align: left;
+    overflow: hidden;
+    margin-bottom: 50px;
+    p {
+      white-space: normal;
+      margin: 20px;
+      @include text-config(13px, 300);
+    }
+    .pic-text {
+      @include text-config(14px, bold);
+      color: #373c4f;
+    }
+    .read-more {
+      color: $color-yellow;
+    }
+    .read-more:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+  .pic {
+    @include block-size(250px, 280px);
+    background-color: $color-yellow;
+    img {
+      @include block-size(250px, 280px);
+    }
+  }
+  ::-webkit-scrollbar {
+    background-color: $color-lite-gray;
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: $color-yellow;
+    border-radius: 10px;
+  }
+}
+
+#quote {
+  @include main-blocks(7% 5%);
+  @include color-blocks($color-dark-gray, $color-white);
+  background-image: url("../img/pic-block-header.jpg");
+  background-position: center;
+  background-size: cover;
+  .outer-circle {
+    margin-top: 0;
+    border-color: $color-yellow;
+    margin-bottom: 50px;
+  }
+  .inner-circle {
+    @include color-blocks($color-yellow, $color-white);
+  }
+  .fa-twitter {
+    font-size: 40px;
+    line-height: 70px;
+  }
+  p {
+    @include text-config(19px, 300);
+    margin-bottom: 30px;
+  }
+  .nick {
+    font-weight: bold;
+    margin-bottom: 30px;
+  }
+  .small-circle {
+    @include block-size(30px, 30px);
+    @include color-blocks(transparent, $color-white);
+    border-radius: 15px;
+    border: 1px solid $color-white;
+    display: inline-block;
+    margin: 20px;
+    .fa {
+      font-size: 20px;
+      line-height: 30px;
+    }
+  }
+  .small-circle:hover {
+    cursor: pointer;
+    border-color: $color-yellow;
+    color: $color-yellow;
+  }
+}
+
+#contacts {
+  @include main-blocks(7% 5% 3% 5%);
+  @include color-blocks($color-white, $color-contacts);
+  h2 {
+    color: #5b6074;
+  }
+  .line {
+    @extend %line;
+    background-color: $color-contacts;
+    margin: 0 auto 20px;
+  }
+  .question {
+    @extend %question;
+    margin-bottom: 60px;
+  }
+  .cont {
+    display: inline-block;
+    margin: 0 15px 50px;
+    p {
+      display: inline-block;
+      @include text-config(16px, 300);
+    }
+  }
+  .small-circle {
+    @include block-size(40px, 40px);
+    @include color-blocks(transparent, $color-yellow);
+    border-radius: 20px;
+    border: 2px solid $color-yellow;
+    display: inline-block;
+    margin-right: 10px;
+  }
+  .fa {
+    font-size: 16px;
+    line-height: 38px;
+  }
+  .field-block {
+    @include block-size(auto, 700px);
+    margin: 10px auto;
+  }
+  .tf {
+    @extend %forms;
+    @include block-size(40px, 46%);
+    margin: 1%;
+  }
+  textarea {
+    @extend %forms;
+    @include block-size(200px, 94%);
+    resize: none;
+  }
+  .tf::-webkit-input-placeholder {
+    padding-left: 10px;
+    color: $color-placeholder;
+  }
+  textarea::-webkit-input-placeholder {
+    padding: 10px;
+    color: $color-placeholder;
+  }
+  .button {
+    @include block-size(50px, 180px);
+    margin-top: 20px;
+    @include color-blocks($color-yellow, $color-white);
+    @include text-config(14px, bold);
+    border: none;
+    border-radius: 5px;
+  }
+  .button:hover {
+    cursor: pointer;
+    background-color: #ba9945;
+  }
+}
+
+.footer-line {
+  @include block-size(1px, auto);
+  background-color: $color-lite-gray;
+}
+
+.footer-div {
+  margin: 30px auto;
+  text-align: center;
+  @include text-config(13px, 300);
+  color: $color-placeholder;
+}
+
+@media (max-width: 1300px) {
+  #portfolio {
+    .diamond {
+      margin: 40px 5%;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  #about {
+    .big-outer-circle {
+      @include block-size(200px, 200px);
+      border: 4px solid $color-yellow;
+    }
+    .big-inner-circle {
+      @include block-size(140px, 140px);
+      margin: 12% auto;
+    }
+    img {
+      top: -15px;
+      left: -65px;
+    }
+  }
+  #portfolio {
+    .pictures {
+      height: 400px;
+    }
+  }
+}
+
+@media (max-width: 980px) {
+  .header {
+    li {
+      display: block;
+      margin-bottom: 20px;
+    }
+    .second-list {
+      li {
+        display: block;
+        margin-bottom: 20px;
+      }
+    }
+  }
+  #about {
+    .outer-div {
+      @include block-size(25px, 100%);
+      margin: 10px 0;
+    }
+    .p-text {
+      line-height: 25px;
+    }
+    .left {
+      @include text-config(10px, $color-white);
+      margin-left: 5px;
+    }
+    .right {
+      font-size: 12px;
+      margin-right: 5px;
+    }
+  }
+  #portfolio {
+    .pictures {
+      height: 300px;
+    }
+  }
+  #blog {
+    .tf {
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 780px) {
+  #about {
+    .big-outer-circle {
+      @include block-size(150px, 150px);
+      border: 3px solid $color-yellow;
+    }
+    .big-inner-circle {
+      @include block-size(100px, 100px);
+      margin: 14% auto;
+    }
+    img {
+      top: -5px;
+      left: -45px;
+    }
+    .social-circle {
+      margin-right: 15px;
+    }
+  }
+  #portfolio {
+    .pictures {
+      height: 250px;
+    }
+    .block {
+      margin: 70px 30px 100px 0;
+    }
+    a {
+      font-size: 10px;
+    }
+    .diamond {
+      margin: 40px;
+    }
+  }
+  #blog {
+    .sidebar {
+      .fa-search {
+        font-size: 15px;
+      }
+    }
+  }
+  #contacts {
+    .field-block {
+      width: 90%;
+    }
+  }
+}
+
+@media (max-width: 650px) {
+  .header {
+    .line {
+      display: none;
+    }
+    .social {
+      text-align: center;
+    }
+  }
+  #about {
+    .text-about {
+      float: none;
+      width: 100%;
+      margin-bottom: 30px;
+    }
+    .skills {
+      float: none;
+      width: 100%;
+    }
+    .big-outer-circle {
+      @include block-size(250px, 250px);
+      border: 5px solid $color-yellow;
+      margin: 20px auto;
+    }
+    .big-inner-circle {
+      @include block-size(180px, 180px);
+      margin: 12% auto;
+    }
+    img {
+      top: -10px;
+      left: -75px;
+    }
+    .social-circle {
+      margin-right: 20px;
+    }
+    .outer-div {
+      @include block-size(40px, 100%);
+      margin: 20px 0;
+    }
+    .p-text {
+      line-height: 40px;
+    }
+    .left {
+      @include text-config(13px, $color-white);
+      margin-left: 10px;
+    }
+    .right {
+      font-size: 15px;
+      margin-right: 10px;
+    }
+  }
+  #portfolio {
+    .project-name {
+      float: none;
+      width: 100%;
+    }
+    .pictures {
+      float: none;
+      width: 100%;
+      margin: 20px 0;
+    }
+    a {
+      font-size: 13px;
+    }
+    .block {
+      margin: 20px auto;
+      display: block;
+    }
+  }
+  #blog {
+    .pic-com {
+      float: none;
+      width: 100%;
+      margin-left: 0;
+      margin-bottom: 30px;
+    }
+    .sidebar {
+      float: none;
+      width: 100%;
+      margin-right: 0;
+    }
+  }
+  #contacts {
+    .field-block {
+      width: 100%;
+    }
+    .tf {
+      width: 98%;
+    }
+    textarea {
+      width: 98%;
+    }
+  }
+  .footer-div {
+    font-size: 10px;
+  }
+}
